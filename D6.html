@@ -1,0 +1,271 @@
+<html>
+    <head>
+        <title>30DaysOfJavaScript D6</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+//level1
+const countries = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya'
+]
+
+const webTechs = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Node',
+  'MongoDB'
+]
+
+//const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+/*
+for (let i = 0; i <= 10; i++) {
+    console.log(i)
+}
+let i = 0
+while (i < 10) {
+    i++;
+    console.log(i)
+}//Q1
+*/
+
+for(let i = 10; i>= 0; i--){
+    console.log(i)
+}
+let i = 11
+while(i > 0){
+    i--;
+    console.log(i)
+}//Q2
+let n = prompt('please enter number:')
+for (let i = 0; i<= n; i++){
+    console.log(i)
+}//Q3
+let word =''
+for(let i = 0; i<7;i++){
+    word = word +'#'
+    console.log(word)
+}//Q4
+let Q5
+for(let i = 0; i<=10; i++){
+    Q5 = i*i;
+    console.log(`${i}*${i}`+'='+`${Q5}`) 
+}//Q5
+console.log("i\ti^2\ti^3");
+for(let i = 0; i < 11; i++) {
+   console.log(`${i}\t${i**2}\t${i**3}`);
+}//Q6
+let Q7=[]
+for (let i = 0; i <= 100; i++) {
+    if(i%2===0){
+        Q7.push(i);
+    }    
+}
+console.log(Q7)//Q7
+for(let i = 1; i<=100;i+=2){
+    console.log(i)
+}//Q8
+let q9 =[]
+for (let i = 0; i <= 100; i++) {
+    let flag = 0;
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            flag = 1;
+            break;
+        }
+    }
+    if (i > 1 && flag == 0) {
+        q9.push(i)
+    }
+}
+//Q9
+let sum = 0
+for(let i = 0; i<=100; i++){
+    sum = sum + i;
+}//Q10
+let q11_1 = 0  
+for(let i = 0; i<=100;i+=2){
+    q11_1 = q11_1 +i
+}
+let q11_2 = 0
+for(let i = 1; i<=100;i+=2){
+    q11_2 = q11_2 +i
+}
+console.log(`The sum of all evens from 0 to 100 is ${q11_1}. And the sum of all odds from 0 to 100 is ${q11_2}.`)//Q11
+console.log([q11_1,q11_2])//Q12
+let Q13 = []
+for(let i = 0; i<5; i++){
+    Q13.push(Math.floor(Math.random()*10))
+}//Q13
+let Q14 = []
+for(let i = 0; i<5; i++){
+    var random_num = Math.floor(Math.random()*10)
+    if(Q14.indexOf(random_num) == -1){
+        Q14.push(random_num)
+    }
+}//Q14
+let pool ='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var random_str = ""
+for(let i = 0;i<6;i++){
+    random_str = random_str + pool.charAt(Math.floor(Math.random()*(pool.length)))
+}//Q15
+//level2
+let x = Math.floor(Math.random()*pool.length)
+var random_str1 = ""
+for(let i = 0;i<x;i++){
+    random_str1 = random_str1 + pool.charAt(Math.floor(Math.random()*(pool.length)))
+}//Q1
+let ran_hex = '#'
+let pool_hex = '123456789abcdef'
+for(let i = 0 ; i<6;i++){
+    ran_hex = ran_hex + pool_hex.charAt(Math.floor(Math.random()*pool_hex.length))
+}//Q2
+let rgb = [];
+var red = (parseInt(Math.random() * 255));
+var gre = (parseInt(Math.random() * 255));
+var blu = (parseInt(Math.random() * 255));
+console.log(`rgb(${red}, ${gre}, ${blu})`);//Q3
+var up_countries = []
+for(let i = 0; i<countries.length;i++){
+    up_countries.push(countries[i].toUpperCase())
+}//Q4
+var length_countries=[]
+for(let i = 0; i<countries.length;i++){
+    length_countries.push(countries[i].length)
+}//Q5
+var new_countries=[]
+for(let i = 0; i<countries.length;i++){
+    new_countries.push([`${countries[i]},${countries[i].slice(0,3).toUpperCase()},${length_countries[i]}`])
+}//Q6
+let land_countries = []
+let land_flag = false
+for(let i = 0; i<countries.length;i++){
+    if(countries[i].includes('land')){
+        land_countries.push(countries[i])
+        land_flag = true
+    }
+}
+if (land_flag = false){
+    console.log('All these countries are without land')
+}//Q7
+let ia_countries = []
+let ia_flag = false
+for(let i = 0; i<countries.length;i++){
+    if(countries[i].endsWith('ia')){
+        ia_countries.push(countries[i])
+        ia_flag = true
+    }
+}
+if (ia_flag = false){
+    console.log('These are countries ends without ia')
+}//Q8
+let largest_length_ia_countries = ia_countries[0].length
+let ia_length_flag = 0
+for(let i = 0;i<ia_countries.length;i++){
+    if(ia_countries[i].length>largest_length_ia_countries){
+        largest_length_ia_countries = ia_countries[i].length
+        ia_length_flag  = parseInt(i)
+    }
+}
+console.log(`the country containing the biggest number of characters is ${ia_countries[ia_length_flag]}`)//Q9
+let Q10 = []
+for(let i=0;i<countries.length;i++){
+    if(countries[i].length == 5){
+        Q10.push(countries[i])
+    }
+}//Q10
+let longest_word_length = 0
+let longest_word_index = 0
+for(let i=0;i<webTechs.length;i++){
+    if(webTechs[i].length>longest_word_length){
+        longest_word_length = webTechs[i].length
+        longest_word_index = i
+    }
+}
+console.log(`longest word in the webTechs array is ${webTechs[longest_word_index]}`)//Q11
+let new_webTechs = []
+for(let i=0;i<webTechs.length;i++){
+    new_webTechs.push([`${webTechs[i]}`,`${webTechs[i].length}`])
+}//Q12
+let mernArray = ['MongoDB', 'Express', 'React', 'Node']
+let mernStack = []//Q13
+let tech=["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+for(let i=0;i<tech.length;i++){
+    console.log(tech[i])
+}//Q14
+let fruit = ['banana', 'orange', 'mango', 'lemon']
+let rev_fruit = []
+for(let i=fruit.length-1;i>=0;i--){
+    rev_fruit.push(fruit[i])
+}//Q15
+const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+  ]
+let Q16 = [fullStack.toString().split(',')]
+for(let i=0;i<Q16.length;i++){
+    console.log(Q16[i])
+}//Q16
+//level3
+const countries1 = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya',
+  'CcCC'
+]
+let copy_countries = countries1//Q1
+let sortedCountries = copy_countries.sort()//Q2
+let sortedWebTechs = webTechs.sort()
+let sortedMernStack = mernStack.sort()//Q3
+let land_countries_level3 = []
+for(let i=0;i<countries.length;i++){
+    if(countries[i].includes('land')){
+        land_countries_level3.push(countries[i])
+    }
+}//Q4
+//Q5 is same as level2-Q9
+//Q6 is same as level3 Q4
+let land_countries_level3_Q7 = []
+for(let i=0;i<countries1.length;i++){
+    if(countries1[i].length === 4){
+        land_countries_level3_Q7.push(countries1[i])
+    }
+}//Q7
+let land_countries_level3_Q8 = []
+for(let i=0;i<countries1.length;i++){
+    if(countries1[i].length >=2){
+        land_countries_level3_Q8.push(countries1[i])
+    }
+}//Q8
+let land_countries_level3_Q9 = countries.reverse()//Q9
+
+
+
+
+
+
+
+    </script>
+</html>

@@ -1,0 +1,356 @@
+<html>
+    <head>
+        <title>30DaysOfJavaScript D7</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+//level1
+function fullName1(){
+    console.log('qihq')
+}//Q1
+function fullName2(){
+    let firstName = 'hq'
+    let lastName = 'qi'
+    let fullName = firstName + lastName
+    console.log(fullName)
+} //Q2
+function addNumbers3(num1,num2){
+    sum_num = num1+num2
+    return sum_num
+}//Q3
+function areaOfRectangle(length,width){
+    areaOfRectangle = length*width
+    return areaOfRectangle
+}//Q4
+function perimeterOfRectangle(length,width){
+    perimeterOfRectangle = 2*(length + width)
+    return perimeterOfRectangle
+}//Q5
+function volumeOfRectPrism(length,width,height){
+    volumeOfRectPrism = length*width*height
+    return volumeOfRectPrism
+}//Q6
+function areaOfCircle(r){
+    areaOfCircle = Math.PI*r*r
+    return areaOfCircle
+}//Q7
+function circumOfCircle(r){
+    circumOfCircle = 2*Math.PI*r
+}//Q8
+function density(mass,volume){
+    density= mass/volume
+    return density
+}//Q9
+speed = (TDC, TT) => {
+    return TDC / TT
+}//Q10
+weight = (mass, gravity) => {
+    return mass * gravity;
+}//Q11
+function convertCelsiusToFahrenheit(oC){
+    oF =  (oC * 9/5) + 32
+    return oF
+}//Q12
+function BMI(weight, height){
+    let BMI = weight / (height * height)
+    if(BMI<=18.5){
+        console.log('Underweight')
+    }
+    else if(BMI>18.5 && BMI<=24.9){
+        console.log('Normal weight')
+    }
+    else if(BMI>25 && BMI<=29.9){
+        console.log('Overweight')
+    }
+    else if(BMI>=30){
+        console.log('Obese')
+    }
+}//Q13
+function checkSeason(month){
+    if(month=='september'||month=='october'||month=='november'){
+        console.log("the season is Autumn")
+    }
+    else if (month=='december'||month=='january'||month=='febuary'){
+        console.log("the season is Winter")
+    }
+    else if (month=='march'||month=='april'||month=='may'){
+        console.log("the season is Spring")
+    }
+    else if (month=='june'||month=='july'||month=='august'){
+        console.log("the season is Summer")
+    }
+    else {
+        console.log("error")
+    }
+}//Q14
+function findMax(){
+   let max = arguments[0]
+    for(let i=1;i<arguments.length;i++){
+        if(arguments[i]>arguments[i-1]){
+           max = arguments[i]
+        }
+    }
+    return max
+}//Q15
+//level2
+function solveLinEquation(a,b,c){
+
+}//Q1
+function solveQuadEquation(){
+    let disc = Math.pow(b, 2) - 4*a*c;
+    let posX = (-b+Math.pow(disc, 0.5))/(2*a);
+    let negX = (-b-Math.pow(disc, 0.5))/(2*a);
+    return [posX, negX];
+}//Q2
+function printArray(){
+    for(let i=0;i<arguments.length;i++){
+        console.log(arguments[i])
+    }
+}//Q3
+function showDateTime(){
+    let datetime = new Date()
+    let year = datetime.getFullYear()
+    let day = datetime.getDate()
+    let month = datetime.getMonth()+1
+    let hour = datetime.getHours()
+    let min = datetime.getMinutes()
+    if(day<10){
+        day = 0+day.toString()
+    }
+    if(month<10){
+        month = 0+month.toString()
+    }
+    if(hour<10){
+        hour = 0+hour.toString()
+    }
+    if(min<10){
+        min = 0+min.toString()
+    }
+    console.log(`${day}/${month}/${year} ${hour}:${min}`)
+
+}//Q4 08/01/2020 04:08
+function swapValues(num1,num2){
+    let temp = num1
+    num1 = num2
+    num2 = temp
+    console.log(num1,num2)
+}//Q5
+function reverseArray(){
+    let rev = []
+    let arguments1 = arguments[0]
+    for(let i=arguments1.length-1;i>=0;i--){
+        rev.push(arguments1[i])
+    }
+    return rev
+}//Q6
+function capitalizeArray(){
+    let cap = []
+    for(let i=0;i<arguments.length;i++){
+        cap.push(arguments[i].toUpperCase())
+    }
+    return cap
+}//Q7
+function addItem(arguments,item){
+    arguments.push(item)
+    return arguments
+}//Q8
+function removeItem(arguments,index){
+    arguments.splice(index,1)
+    return arguments
+}//Q9
+function sumOfNumbers(num){
+    if(num == 0) return 0;
+    else return num + sumOfNumbers(num-1);
+}//Q10
+function sumOfOdds(num){
+    if(num % 2==0){
+        var n = num/2
+        sumOfOdds1 = ((2+(n-1)*2)*n)/2
+    }
+    else if(num % 2 !=0){
+        var n = (num+1)/2
+        sumOfOdds1 = ((2+(n-1)*2)*n)/2
+    }
+    return sumOfOdds1
+}//q11
+function sumOfEven(num){
+    if(num <= 0) return 0;
+    if(num%2==0){
+        return num+sumOfEven(num-2)
+    }
+    else {
+        num = num -1
+        return num+sumOfEven(num-2)
+    }
+}//Q12
+function evensAndOdds(num){
+    if(num%2==0){
+    var evennum = num/2+1
+    var oddsnum = num/2
+    return `The number of odds are ${evennum}.\nThe number of evens are ${oddsnum}.`
+    }
+    if(num%2!=0){
+        var evennum = (num+1)/2
+        var oddsnum = (num+1)/2
+        return `The number of odds are ${evennum}.\nThe number of evens are ${oddsnum}.`
+    }
+}//Q13
+function sum(){
+    var sum1 = 0 
+    for(let i=0;i<arguments.length;i++){
+        sum1 = sum1 + arguments[i]
+    }
+    return sum1
+}//Q14
+function randomUserIp(){
+    let a = parseInt(Math.random() * 255)
+    let b = parseInt(Math.random() * 255)
+    let c = parseInt(Math.random() * 255)
+    let d = parseInt(Math.random() * 255)
+    return `${a}.${b}.${c}.${d}`
+}//Q15
+function randomMacAddress(){
+    let mac_pool = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+    let ran_mac_1 = mac_pool[Math.floor(Math.random()*15)].toString()+mac_pool[Math.floor(Math.random()*15)].toString()
+    let ran_mac_2 = mac_pool[Math.floor(Math.random()*15)].toString()+mac_pool[Math.floor(Math.random()*15)].toString()
+    let ran_mac_3 = mac_pool[Math.floor(Math.random()*15)].toString()+mac_pool[Math.floor(Math.random()*15)].toString()
+    let ran_mac_4 = mac_pool[Math.floor(Math.random()*15)].toString()+mac_pool[Math.floor(Math.random()*15)].toString()
+    let ran_mac_5 = mac_pool[Math.floor(Math.random()*15)].toString()+mac_pool[Math.floor(Math.random()*15)].toString()
+    let ran_mac_6 = mac_pool[Math.floor(Math.random()*15)].toString()+mac_pool[Math.floor(Math.random()*15)].toString()
+    return `${ran_mac_1}-${ran_mac_2}-${ran_mac_3}-${ran_mac_4}-${ran_mac_5}-${ran_mac_6}`
+}//Q16
+function randomHexaNumberGenerator(){
+    let pool = "0123456789ABCDEF";
+    let hex = "";
+    for (let i = 0; i < 6; i++) {
+        hex += pool[Math.floor(Math.random() * pool.length)];
+    }
+    return `#${hex}`
+}//Q17
+function userIdGenerator(){
+    let pool = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+    let userId = "";
+    for (let i = 0; i <= 7; i++) {
+        userId += pool[Math.floor(Math.random() * pool.length)];
+    }
+    return userId;
+}//Q18
+//level3
+function userIdGeneratedByUser(){
+    let pool = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+    let id_num = Number(prompt("how many id do you want to generate?"));
+    let chars_num = Number(prompt("how many chars do you want to generate?"));
+    let ids = [];
+    for (i = 0; i < id_num; i++) {
+        ids[i] = "";
+        for (k = 0; k < chars_num; k++) {
+            ids[i] += pool[Math.floor(Math.random() * chars_num.length)];
+        }
+        return ids
+    }
+    }//Q1
+function rgbColorGenerator(){
+    let rgb = [];
+    var red = (parseInt(Math.random() * 255));
+    var grn = (parseInt(Math.random() * 255));
+    var blu = (parseInt(Math.random() * 255));
+    rgb.push(red, grn, blu);
+    return `rgb(${red}, ${grn}, ${blu})`;
+}//Q2
+function arrayOfHexaColors(){
+    let pool = "0123456789ABCDEF";
+    let hex = [];
+    for (let i = 0; i < 6; i++) {
+        hex.push(pool[Math.floor(Math.random() * pool.length)])
+    }
+    return `#${hex[0]}${hex[1]}${hex[2]}${hex[3]}${hex[4]}${hex[5]}`
+}//Q3
+function arrayOfRgbColors(){
+    let rgb = [];
+    var red = (parseInt(Math.random() * 255));
+    var grn = (parseInt(Math.random() * 255));
+    var blu = (parseInt(Math.random() * 255));
+    rgb.push(red, grn, blu);
+    return `rgb(${red}, ${grn}, ${blu})`;
+}//Q4
+function convertHexaToRgb(hex){
+    if(hex.length!=7||hex[0]!='#'){
+        return 'error'
+    }
+    let rgb = []
+    let hex_new = hex.split('')
+    for(let i=1;i<7;i++){
+            switch(hex_new[i].toUpperCase()){
+                case 'A':
+                    hex_new[i] = 10
+                    break
+                case 'B':
+                    hex_new[i] = 11
+                    break
+                case 'C':
+                    hex_new[i] = 12
+                    break
+                case 'D':
+                    hex_new[i] = 13
+                    break      
+                case 'E':
+                    hex_new[i] = 14
+                    break
+                case 'F':
+                    hex_new[i] = 15
+                    break      
+            }
+    }
+    let red = parseInt(hex_new[1])*16+parseInt(hex_new[2])
+    let grn = parseInt(hex_new[3])*16+parseInt(hex_new[4])
+    let blu = parseInt(hex_new[5])*16+parseInt(hex_new[6])
+    return `rgb(${red},${grn},${blu})`
+}//Q5
+/*
+function convertRgbToHexa(r,g,b){
+    let hex = '#'+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1)
+    return hex
+}//Q6 */
+function convertRgbToHexa(r,g,b){
+    let hex_1 = r.toString(16)
+    let hex_2 = g.toString(16) 
+    let hex_3 = b.toString(16)
+    return `#${hex_1.toUpperCase()}${hex_2.toUpperCase()}${hex_3.toUpperCase()}`
+}//Q6
+function generateColors(type, arrLength){
+    let chars = "0123456789ABCDEF";
+    let colors = [];
+    if (type === "rgb") {
+        for (i = 0; i < arrLength; i++) {
+            colors[i] = "rgb"
+            colors[i] += `(${ Math.floor(Math.random() * 255) },`
+            colors[i] += `${ Math.floor(Math.random() * 255) },`
+            colors[i] += `${ Math.floor(Math.random() * 255) },)`
+        }
+    } else if (type === "hex") {
+        for (let i = 0; i < arrLength; i++) {
+            colors[i] = "#";
+            for (k = 0; k < 6; k++) {
+                colors[i] += chars[Math.floor(Math.random() * chars.length)];
+            }
+        }
+    }
+    return colors;
+}//Q7
+function shuffleArray(arr){
+    for(let i=0;i<arr.length;i++){
+        ran_index = parseInt(Math.random()*(arr.length-1-i))
+        var temp = arr[ran_index]
+        arr[ran_index] = arr[arr.length-1-i]
+        arr[arr.length-1-i] = temp
+    }
+    return arr
+}//Q8(Fisher-Yates)
+function factorial(){
+
+}//Q9
+
+    </script>
+</html>
