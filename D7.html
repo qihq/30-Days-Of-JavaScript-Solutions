@@ -348,9 +348,94 @@ function shuffleArray(arr){
     }
     return arr
 }//Q8(Fisher-Yates)
-function factorial(){
-
+function factorial(num){
+   if (num <= 1) return 1;
+   else return num * factorial(num-1);
 }//Q9
-
+function isEmpty(a){
+    if(a == null || a==undefined||a.length == 0){
+        return 'empty'
+    }
+    else return 'is not empty'
+}//Q10
+function sum(){
+    let sum = 0
+    for(let i=0;i<arguments.length;i++){
+        sum = sum + parseInt(arguments[i])
+    }
+    return sum
+}//Q11
+function sumOfArrayItems(arr){
+    let sum = 0
+    for(let i=0;i<arr.length;i++){
+        if(typeof(arr[i])!="number"){
+            return 'error input'
+            break
+        }
+    else 
+    sum = sum +arr[i]
+    }
+    return sum
+}//Q12
+function average(){
+    let sum = 0
+    let ave
+    for(let i=0;i<arguments.length;i++){
+        if(typeof(arguments[i])!="number"){
+            return 'error input'
+            break
+        }
+        else
+        sum = sum +arguments[i]
+    }
+    return ave = sum/arguments.length
+}//Q13
+function modifyArray(arr){
+    if(arr.length<5) return 'item not found'
+    else arr[4] = arr[4].toUpperCase()
+    return arr
+}//Q14
+function isPrime(num){
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0 && num > 1) {
+            return `${num} is a prime number`
+        } else return `not prime`
+    }
+}//Q15
+function Q16(){
+    for(let x = 1; x < arr.length; x++) {
+    for(let i = 0; i< x; i++) {
+      if(arr[x] == arr[i])
+        return false
+    }
+  } return true
+}//Q16
+function Q17(){
+    let type = typeof arr[0]
+    for(const i of arr) {
+    if(type != i)
+      return false    
+  }
+  return true
+}//Q17
+function isValidVariable(){
+    let regex = /[_|\$|a-z|A-Z|0-9]+/;
+    return regex.test(varName);
+}//Q18 (from https://github.com/HamzaMateen/30DaysOfJavaScript-Solutions/blob/main/Day07_Functions/level3.js)
+function sevenRandomNumbers(){
+   let ran_arr = []
+   let temp = 0
+   while(ran_arr.length < 7){
+    temp = Math.ceil(Math.random() * 9)
+    if(ran_arr.indexOf(temp) == -1){
+      ran_arr.push(temp)
+    }
+  }
+  return ran_arr   
+}//Q19
+function reverseCountries(countries){
+  var copy = countries
+  return countries.reverse()
+}//Q20  
     </script>
 </html>
